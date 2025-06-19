@@ -42,7 +42,7 @@ tools:
   # used for signing the checksums file at release
   - name: cosign
     version:
-      want: v2.5.0
+      want: v2.5.1
     method: github-release
     with:
       repo: sigstore/cosign
@@ -50,7 +50,7 @@ tools:
   # used to release all artifacts
   - name: goreleaser
     version:
-      want: v2.9.0
+      want: v2.10.2
     method: github-release
     with:
       repo: goreleaser/goreleaser
@@ -82,7 +82,7 @@ tools:
   # used for running all local and CI tasks
   - name: task
     version:
-      want: v3.43.3
+      want: v3.44.0
     method: github-release
     with:
       repo: go-task/task
@@ -90,7 +90,7 @@ tools:
   # used for triggering a release
   - name: gh
     version:
-      want: v2.74.0
+      want: v2.74.1
     method: github-release
     with:
       repo: cli/cli

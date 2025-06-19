@@ -28,6 +28,7 @@ func KnownOperatingSystemSpecifierOverrides() []OperatingSystemSpecifierOverride
 		{Alias: "oraclelinux", ReplacementName: strRef("ol")},                // non-standard, but common (dockerhub uses "oraclelinux")
 		{Alias: "amazon", ReplacementName: strRef("amzn")},                   // non-standard, but common
 		{Alias: "amazonlinux", ReplacementName: strRef("amzn")},              // non-standard, but common (dockerhub uses "amazonlinux")
+		{Alias: "echo", Rolling: true},
 		// TODO: trixie is a placeholder for now, but should be updated to sid when the time comes
 		// this needs to be automated, but isn't clear how to do so since you'll see things like this:
 		//
@@ -76,6 +77,9 @@ func KnownPackageSpecifierOverrides() []PackageSpecifierOverride {
 
 		// legacy cases
 		{Ecosystem: "pecl", ReplacementEcosystem: ptr(string(pkg.PhpPeclPkg))},
+		{Ecosystem: "kb", ReplacementEcosystem: ptr(string(pkg.KbPkg))},
+		{Ecosystem: "dpkg", ReplacementEcosystem: ptr(string(pkg.DebPkg))},
+		{Ecosystem: "apkg", ReplacementEcosystem: ptr(string(pkg.ApkPkg))},
 	}
 
 	// remap package URL types to syft package types
